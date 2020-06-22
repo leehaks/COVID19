@@ -1,51 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/import.css"> 
     <title>COVID-19</title>
 </head>
 <body>
     <div id="wrap">
-        <div class="header">
-            <div class="header-component">
-                <div class="head"></div>
-                <div class="body"></div>
-                <div class="foot"></div>
-            </div>
-        </div>
-        <div class="main">
-            <div class="sidebar left">
-                <div class="side-componenent">
-                    <div class="side-box">
-                        <div class="body"></div> 
-                    </div>
+        <header id="header" class="primary">
+            <div class="flex h-full">
+                <!-- 로고 -->
+                <h1 class="logo bg-wh h-full flex items-center justify-center">
+                    <img src="/img/logo_pm.png" alt="logo" />
+                </h1>
+                
+                <!-- 대메뉴 -->
+                <div id="navGnb" class="menu flex-1">
+                    <ul class="flex h-full">
+                        <li><a href="" class="active">CORONA-MAP</a></li>
+                        <li><a href="">ADMIN</a></li>
+                        <li class="ml-auto"><a href=""><i class="fas fa-user"></i></a></li>
+                        <li><a href=""><i class="fas fa-bell"></i></a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="content">
-                <div class="content-component">
-                    <div id="mapComponent" class=""></div>
-                    <div class="side-component">
-                        <div class="side-box">
-                            <div class="head"></div> 
-                            <div class="body"></div>    
-                        </div>
+        </header>
+
+        <main id="container">
+
+            <!-- 서브메뉴 -->
+            <aside id="navSnb" class="bg-wh">
+                <div class="list-group">
+                    <div class="list-component">
+                        <h3 class="tit">LINK</h3>
+                        <ul class="flex col items-center">
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>                                
+                        </ul>
                     </div>
-                    <div class="time-component">
-                        <div class="time-box">
-                        <div class="head"></div> 
-                        <div class="body"></div>    
-                        </div>
+                    <div class="list-component">
+                        <h3 class="tit">LINK</h3>
+                        <ul class="flex col items-center">
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                        </ul>
                     </div>
-                    <div class="crumb-component">
-                    <div class="crumb-box">
-                        <div class="head"></div> 
-                        <div class="body"></div>    
+                    <div class="list-component">
+                        <h3 class="tit">LINK</h3>
+                        <ul class="flex col items-center">
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="list-component">
+                        <h2 class="tit">LINK</h2>
+                        <ul class="flex col items-center">
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                            <li><a href=""><i class="fas fa-cannabis"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <div id="main">
+
+                <!-- 맵화면 -->
+                <div id="mapView" class="w-full h-full" role="mapView">
+                    <img src="img/map.png" alt="map" /> 
+                </div>
+
+                <!-- 노드리스트 -->
+                <div class="dialog-component" role="nodeList">
+                    <div class="head">
+                        <h3 class="tit">검색설정</h3>
+                    </div>
+                    <div class="body">
+
+                        <form>
+
+                        </form>
+
+                        <div id="mapDetailInfo" class="list-component border">
+                            <ul>
+                                <li><button class="">용산구 <span class="people-num">32</span></button></li>
+                                <li><button class="">종로구 <span class="people-num">32</span></button></li>
+                                <li><button class="">은평구 <span class="people-num">32</span></button></li>
+                                <li><button class="">동작구 <span class="people-num">32</span></button></li>
+                                <li><button class="">강남구 <span class="people-num">32</span></button></li>
+                                <li><button class="">강서구 <span class="people-num">32</span></button></li>
+                                <li><button class="">마포구 <span class="people-num">32</span></button></li>
+                                <li><button class="">구로구 <span class="people-num">32</span></button></li>
+                            </ul>
+                        </div>
+                        <div id="" class="route-component">
+
                         </div>
                     </div>
                 </div>
+                
+                <!-- 노드크럼블 -->
+                <div class="dialog-component flex" role="nodeCrumbList">
+                    <div class="head">
+                        <h3 class="tit">경로</h3>
+                    </div>
+                    <div class="body">
+                        <div id="mapCrumb" class="crumb-component">
+                            <span>용산구</span>
+                            <span>#13842</span>
+                            <span>A클럽</span>
+                            <span>#14823</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 노드변화그래프 -->
+                <div class="dialog-component" role="nodeTimeChangeData">
+                    <div class="head">
+                        <h3 class="tit">일일확진자추이</h3>
+                        <div class="btn-group ml-auto">
+                            <button>월</button>
+                            <button>주</button>
+                            <button>일</button>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div id="mapTime" class="time-component"></div>
+                    </div>
+                </div>
+                       
             </div>
-        </div>
+
+        </main>
     </div>
 </body>
 </html>

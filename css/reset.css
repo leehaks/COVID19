@@ -1,0 +1,116 @@
+html, body, div, span, applet, object, iframe,
+blockquote, pre,
+a, p, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family: 'NanumSquare', sans-serif;
+	transform: skew(-0.004deg);
+	-webkit-font-smoothing: antialiased;
+}
+
+*, ::before, ::after { box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html, body {
+	background: #fff;
+	line-height: 1;
+	overflow: hidden;
+	position: relative;
+	font-size: 16px;
+	color: #717585;
+}
+
+html, body, div#wrap { 
+	width: 100%; 
+    height: 100%; 
+}
+
+#wrap { 
+    display: flex; 
+    display: -ms-flexbox; 
+	flex-direction: column;
+	-ms-flex-direction: column;
+}
+
+select, input, button, textarea { 
+	display: block; 
+	margin: 0; 
+	padding: 1px; 
+	border: none; 
+	outline: 0;
+	box-shadow: none;
+	color: #465266; 
+	font-family: 'NanumSquare', sans-serif; 
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+textarea { resize: none; }
+
+input:focus, textarea:focus, 
+select:focus { outline: none !important; }
+
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+
+blockquote:before, 
+blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a { 
+	display: block; 
+	text-decoration: none; 
+	color: inherit; 
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 20px;  /* 세로축 스크롤바 길이 */
+	height: 5px;  /* 가로축 스크롤바 길이 */
+}
+
+::-webkit-scrollbar-track { background-color: #fff; }
+
+::-webkit-scrollbar-thumb {
+	border: 8px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+	border-radius: 10px;
+	background-color: #8F98AF;
+}
+
+::-webkit-scrollbar-button {
+	width: 0; 
+	height: 0; 
+	display: none;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: transparent; /* 우측 하단의 코너 부분 */
+}
