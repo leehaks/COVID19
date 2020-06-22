@@ -59,6 +59,7 @@ select, input, button, textarea {
 	box-shadow: none;
 	color: #465266; 
 	font-family: 'NanumSquare', sans-serif; 
+	font-size: inherit; 
 	cursor: pointer;
 	-webkit-appearance: none;
 	-webkit-border-radius: 0;

@@ -88,9 +88,43 @@
 
                         <form>
 
+                            <!-- 장소입력 -->
+                            <div>
+                                <label class="tit">장소</label>
+                                <input type="text" placeholder="위치를 입력해주세요.">
+                            </div>
+                            <div>
+                                <button>현재위치로 설정</button>
+                            </div>
+
+                            <!-- 이동수단선택 -->
+                            <div>
+                                <label class="tit">이동수단</label>
+                                <div>
+                                    <button>도보</button>
+                                    <button>택시</button>
+                                    <button>버스</button>
+                                    <button>전철</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label>이동경로제거</label>
+                                <input type="checkbox" class="toggle-btn" />
+                            </div>
+
+
+                            <div>
+                                <label class="tit">시간</label>
+                                <input type="text" placeholder="From">
+                                <input type="text" placeholder="To">
+                            </div>
+                            <div>
+                                <button></button>
+                                <button>설정</button>
+                            </div>
                         </form>
 
-                        <div id="mapDetailInfo" class="list-component border">
+                        <!-- <div id="mapDetailInfo" class="list-component border">
                             <ul>
                                 <li><button class="">용산구 <span class="people-num">32</span></button></li>
                                 <li><button class="">종로구 <span class="people-num">32</span></button></li>
@@ -101,7 +135,7 @@
                                 <li><button class="">마포구 <span class="people-num">32</span></button></li>
                                 <li><button class="">구로구 <span class="people-num">32</span></button></li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div id="" class="route-component">
 
                         </div>

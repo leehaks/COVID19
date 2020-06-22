@@ -64,12 +64,18 @@
 .list-component ul li { 
     display: flex; 
     align-items: center;
-    padding: .75em 1em; 
 }
 
 .list-component.border ul li { border-bottom: 1px solid #ddd; }
 
-.list-component ul li .people-num { 
+.list-component ul li button, 
+.list-component ul li a { 
+    width: 100%; 
+    display: flex; 
+    padding: .75em 1em; 
+}
+
+.list-component ul li button .people-num { 
     margin-left: auto; 
     color: #aaa; 
 }
@@ -85,15 +91,22 @@
 .dialog-component .head { 
     background: #2756ff; 
     min-width: 67px; 
+    height: 50px; 
     display: flex; 
     align-items: center; 
-    padding: 1em; 
+    padding: 1em 1.5em; 
     text-align: center;
+    font-size: .75rem; 
     color: #fff; 
 }
 
 .dialog-component .body { 
     min-height: 50px; 
+}
+
+form label.tit { 
+    font-weight: 700; 
+    color: #525252; 
 }
 
 div[role="nodeList"] { 
