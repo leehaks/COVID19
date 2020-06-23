@@ -1,7 +1,8 @@
 @import url("all.min.css"); 
 @import url("reset.css"); 
-@import url("common.css"); 
+@import url("page.css"); 
 @import url("component.css"); 
+@import url("common.css"); 
 
 @font-face {
     font-family: 'NanumSquare';

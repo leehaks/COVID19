@@ -86,12 +86,47 @@
                     </div>
                     <div class="body">
 
-                        <form>
+                        <div id="mapDetailInfo">
+                            <form>
+                                <div>
+                                    <label class="tit">장소</label>
+                                    <input type="text" placeholder="위치를 입력해주세요.">
+                                </div>
+                                <div class="flex justify-end">
+                                    <button class="btn link text-primary">현재위치로 설정</button>
+                                </div>
+                                <div>
+                                    <label class="tit">이동수단</label>
+                                    <div class="btn-group flex">
+                                        <button class="btn ellipse flex-1">도보</button>
+                                        <button class="btn ellipse flex-1">택시</button>
+                                        <button class="btn ellipse flex-1">버스</button>
+                                        <button class="btn ellipse flex-1">전철</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-end">
+                                    <span class="mr-5">이동경로제거</span>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="tit">시간</label>
+                                    <div class="flex items-center">
+                                        <input type="text" placeholder="FROM">
+                                        <span></span>
+                                        <input type="text" placeholder="TO">
+                                    </div>
+                                </div>
+                                <div class="btn-group flex justify-end">
+                                    <button class="btn icon primary"><i class="fas fa-undo"></i></button>
+                                    <button class="btn primary"><i class="fas fa-search"></i><span>검색</span></button>
+                                </div>
+                            </form>
 
-                        </form>
 
-                        <div id="mapDetailInfo" class="list-component border">
-                            <ul>
+                            <!-- <ul>
                                 <li><button class="">용산구 <span class="people-num">32</span></button></li>
                                 <li><button class="">종로구 <span class="people-num">32</span></button></li>
                                 <li><button class="">은평구 <span class="people-num">32</span></button></li>
@@ -100,25 +135,44 @@
                                 <li><button class="">강서구 <span class="people-num">32</span></button></li>
                                 <li><button class="">마포구 <span class="people-num">32</span></button></li>
                                 <li><button class="">구로구 <span class="people-num">32</span></button></li>
-                            </ul>
-                        </div>
-                        <div id="" class="route-component">
+                            </ul> -->
 
                         </div>
+                        <div id="" class="route-component"></div>
                     </div>
                 </div>
-                
-                <!-- 노드크럼블 -->
-                <div class="dialog-component flex" role="nodeCrumbList">
+
+                <!-- 금일확진자리스트 -->
+                <div class="dialog-component" role="todayCoronaBoard">
                     <div class="head">
-                        <h3 class="tit">경로</h3>
+                        <h3 class="tit">전국 금일확진자 목록</h3>
                     </div>
                     <div class="body">
-                        <div id="mapCrumb" class="crumb-component">
-                            <span>용산구</span>
-                            <span>#13842</span>
-                            <span>A클럽</span>
-                            <span>#14823</span>
+                        <div class="today-status-board">
+                            <div class="flex items-center">
+                                <div class="tit">
+                                    <h4>금일확진자</h4>
+                                    <p>업데이트일자 : 20200623</p>
+                                </div>
+                                <p class="today-num flex-1">67</p>
+                            </div>
+                            <div class="list-component border mt-10">
+                                <ul class="border">
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                    <li><button>#11851<span>용산구</span></button></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
                         </div>
                     </div>
                 </div>
@@ -127,17 +181,16 @@
                 <div class="dialog-component" role="nodeTimeChangeData">
                     <div class="head">
                         <h3 class="tit">일일확진자추이</h3>
-                        <div class="btn-group ml-auto">
-                            <button>월</button>
-                            <button>주</button>
-                            <button>일</button>
-                        </div>
+                        <!-- <div class="btn-group flex ml-auto">
+                            <button class="btn link">월</button>
+                            <button class="btn link">주</button>
+                            <button class="btn link">일</button>
+                        </div> -->
                     </div>
                     <div class="body">
                         <div id="mapTime" class="time-component"></div>
                     </div>
                 </div>
-                       
             </div>
 
         </main>
