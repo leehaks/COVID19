@@ -1,5 +1,5 @@
 #header {
-  height: 75px;
+  height: 65px;
   z-index: 10;
 }
 
@@ -28,9 +28,7 @@
 }
 
 div[role="nodeList"] {
-  width: 375px;
-  height: auto;
-  bottom: 1.5rem;
+  width: 325px;
   left: 1.5rem;
   top: 1.5rem;
 }
@@ -55,12 +53,12 @@ div[role="todayCoronaBoard"] {
 
 .today-status-board .tit p {
   margin-top: .5rem;
-  font-size: .825rem;
+  font-size: .75rem;
+  color: #aaa;
 }
 
-.today-status-board .today-num {
-  text-align: right;
-  font-size: 2.25rem;
-  font-weight: 700;
+.store-board .tit p {
+  margin-top: .5rem;
+  font-size: .75rem;
+  color: #aaa;
 }
-/*# sourceMappingURL=page.css.map */

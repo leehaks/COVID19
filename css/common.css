@@ -601,7 +601,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-xl {
   line-height: 2.5rem;
-  font-size: 200%;
+  font-size: 210%;
 }
 
 .text-lg {
@@ -726,4 +726,15 @@ h1, h2, h3, h4, h5, h6 {
 .text-disabled {
   color: #8f988f;
 }
-/*# sourceMappingURL=common.css.map */
+
+.text-gray {
+  color: #aaa;
+}
+
+.line-border {
+  width: calc( 100% + 2em);
+  display: inline-block;
+  margin-left: -1em;
+  margin: 1rem 0 0 -1rem;
+  border-top: 1px solid #ddd;
+}

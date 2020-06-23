@@ -13,7 +13,7 @@ $basicBorder : 1px solid #ddd;
     ul { 
         li { 
             margin-left: 2rem; 
-            line-height: 75px;
+            line-height: 65px;
 
             &:first-child { margin-left: 0; }
 
@@ -43,8 +43,6 @@ $basicBorder : 1px solid #ddd;
 
 
 .list-component {
-    margin-top: 2rem;
-
     &:first-child { margin-top: 0; }
 
     .tit { 
@@ -60,12 +58,14 @@ $basicBorder : 1px solid #ddd;
             align-items: center;
 
             button, a { 
+                background: #fff; 
                 width: 100%; 
                 display: flex; 
                 padding: .75em 1em; 
 
                 span { 
                     margin-left: auto; 
+                    font-size: .875rem; 
                     color: #aaa; 
                 }
             }
@@ -74,7 +74,7 @@ $basicBorder : 1px solid #ddd;
 
     &.border { 
         ul { 
-            &.border { border: $basicBorder }
+            &.border { border-top: $basicBorder }
 
             li { 
                 border-bottom: $basicBorder
@@ -87,7 +87,9 @@ $basicBorder : 1px solid #ddd;
 form { 
 
     & > div { 
-        margin-bottom: 1.25rem; 
+        margin-bottom: 1rem; 
+
+        &:last-child { margin-bottom: 0; }
     }
 
     label { 
@@ -164,7 +166,7 @@ form {
     background: #fff; 
     box-shadow: 0 0 10px -2px rgba(0,0,0,.25); 
     position: absolute; 
-    border-radius: .5rem;
+    border-radius: .325rem;
     overflow: hidden; 
 
     .head { 
@@ -208,7 +210,7 @@ form {
 
 .btn-group { 
     button.btn { 
-        margin-left: 1rem; 
+        margin-left: .5rem; 
         &:first-child { margin-left: 0; }
     }
 }
