@@ -95,7 +95,10 @@ a {
 	height: 5px;  /* 가로축 스크롤바 길이 */
 }
 
-::-webkit-scrollbar-track { background-color: #fff; }
+::-webkit-scrollbar-track { 
+	background-color: transparent; 
+	border-left: 1px solid #ddd; 
+}
 
 ::-webkit-scrollbar-thumb {
 	border: 8px solid rgba(0, 0, 0, 0);
