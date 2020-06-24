@@ -10,7 +10,9 @@ $basicBorder : 1px solid #ddd;
 
 .menu { 
     padding: 0 2em; 
+
     ul { 
+
         li { 
             margin-left: 2rem; 
             line-height: 65px;
@@ -43,16 +45,16 @@ $basicBorder : 1px solid #ddd;
 
 
 .list-component {
-    &:first-child { margin-top: 0; }
-
+    
     .tit { 
-        margin-bottom: 1rem; 
+        margin: 1rem 0; 
         text-align: center;
         font-size: .725rem; 
         color: #acafb8; 
     }
 
     ul { 
+
         li { 
             display: flex; 
             align-items: center;
@@ -61,25 +63,36 @@ $basicBorder : 1px solid #ddd;
                 background: #fff; 
                 width: 100%; 
                 display: flex; 
+                align-items: center;
                 padding: .75em 1em; 
+                font-size: 16px; 
 
-                span { 
-                    margin-left: auto; 
+                &:hover { background: #f1f1f1; }
+
+                span.ml-auto, 
+                span.arrive-time { 
                     font-size: .875rem; 
                     color: #aaa; 
+                }               
+                
+                span.arrive-time { padding-top: .5em; }
+
+                span.align-num { 
+                    width: 20px; 
+                    height: 20px; 
+                    line-height: 20px; 
+                    margin-right: 1rem; 
+                    border: 1px solid $primary; 
+                    border-radius: 50%;
+                    color: $primary; 
                 }
             }
         }
     }
 
     &.border { 
-        ul { 
-            &.border { border-top: $basicBorder }
-
-            li { 
-                border-bottom: $basicBorder
-            }
-        }
+        ul.border { border-top: $basicBorder }
+        li { border-bottom: $basicBorder }
     }
 }
 
@@ -88,7 +101,6 @@ form {
 
     & > div { 
         margin-bottom: 1rem; 
-
         &:last-child { margin-bottom: 0; }
     }
 
@@ -164,13 +176,14 @@ form {
 
 .dialog-component { 
     background: #fff; 
-    box-shadow: 0 0 10px -2px rgba(0,0,0,.25); 
     position: absolute; 
+    box-shadow: 0 0 10px -2px rgba(0,0,0,.25); 
+    border: 1px solid #aaa; 
     border-radius: .325rem;
     overflow: hidden; 
 
     .head { 
-        background: #2756ff; 
+        background: $primary; 
         min-width: 67px; 
         display: flex; 
         align-items: center; 
@@ -178,35 +191,9 @@ form {
         text-align: center;
         color: #fff; 
 
-        .tit { font-size: .875rem; }
-    }
-
-    .body { 
-        min-height: 50px; 
-        padding: 1em; 
+        .tit { h3 { font-size: .875rem; } }
     }
 }
-
-
-.crumb-component { 
-    height: 100%;
-    display: flex; 
-    align-items: center;
-    flex-wrap: wrap; 
-    padding: .5rem 1rem; 
-
-    span:not(:first-child)::before { 
-        content:''; 
-        display: inline-block;
-        width: 10px; 
-        height: 10px; 
-        margin: 0 .75rem 0 .25rem; 
-        border-top: $basicBorder; 
-        border-right: $basicBorder; 
-        transform: rotate(45deg);
-    }
-}
-
 
 .btn-group { 
     button.btn { 
@@ -234,18 +221,37 @@ form {
 
     &.ellipse { 
         border-radius: 1.5rem;
+        &:hover { 
+            background: $primary; 
+            color: #fff; 
+        }
     }
 
     &.link { 
         padding: 0; 
+        &:hover { 
+            color: $primary
+        }
     }
 
     &.icon {    
         width: 36px; 
+        height: 36px; 
         padding: 0; 
     }
 
-    span { margin-left: .5rem; }
     i { font-size: 14px; }
+    span { margin-left: .5rem; }
+}
 
+.back-arrow { 
+    background: transparent; 
+    display: block;
+    width: 8px; 
+    height: 8px; 
+    margin-right: .75rem; 
+    padding: 0; 
+    border-bottom: 2px solid #ddd; 
+    border-left: 2px solid #ddd; 
+    transform: rotate(45deg);
 }

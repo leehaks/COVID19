@@ -40,12 +40,8 @@
   display: block;
 }
 
-.list-component:first-child {
-  margin-top: 0;
-}
-
 .list-component .tit {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   text-align: center;
   font-size: .725rem;
   color: #acafb8;
@@ -66,20 +62,43 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: .75em 1em;
+  font-size: 16px;
 }
 
-.list-component ul li button span, .list-component ul li a span {
-  margin-left: auto;
+.list-component ul li button:hover, .list-component ul li a:hover {
+  background: #f1f1f1;
+}
+
+.list-component ul li button span.ml-auto,
+.list-component ul li button span.arrive-time, .list-component ul li a span.ml-auto,
+.list-component ul li a span.arrive-time {
   font-size: .875rem;
   color: #aaa;
+}
+
+.list-component ul li button span.arrive-time, .list-component ul li a span.arrive-time {
+  padding-top: .5em;
+}
+
+.list-component ul li button span.align-num, .list-component ul li a span.align-num {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 1rem;
+  border: 1px solid #2756ff;
+  border-radius: 50%;
+  color: #2756ff;
 }
 
 .list-component.border ul.border {
   border-top: 1px solid #ddd;
 }
 
-.list-component.border ul li {
+.list-component.border li {
   border-bottom: 1px solid #ddd;
 }
 
@@ -158,9 +177,10 @@ form input {
 
 .dialog-component {
   background: #fff;
+  position: absolute;
   -webkit-box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
-  position: absolute;
+  border: 1px solid #aaa;
   border-radius: .325rem;
   overflow: hidden;
 }
@@ -179,38 +199,8 @@ form input {
   color: #fff;
 }
 
-.dialog-component .head .tit {
+.dialog-component .head .tit h3 {
   font-size: .875rem;
-}
-
-.dialog-component .body {
-  min-height: 50px;
-  padding: 1em;
-}
-
-.crumb-component {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: .5rem 1rem;
-}
-
-.crumb-component span:not(:first-child)::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 .75rem 0 .25rem;
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
 }
 
 .btn-group button.btn {
@@ -243,19 +233,43 @@ form input {
   border-radius: 1.5rem;
 }
 
+.btn.ellipse:hover {
+  background: #2756ff;
+  color: #fff;
+}
+
 .btn.link {
   padding: 0;
 }
 
+.btn.link:hover {
+  color: #2756ff;
+}
+
 .btn.icon {
   width: 36px;
+  height: 36px;
   padding: 0;
+}
+
+.btn i {
+  font-size: 14px;
 }
 
 .btn span {
   margin-left: .5rem;
 }
 
-.btn i {
-  font-size: 14px;
+.back-arrow {
+  background: transparent;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-right: .75rem;
+  padding: 0;
+  border-bottom: 2px solid #ddd;
+  border-left: 2px solid #ddd;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
+/*# sourceMappingURL=component.css.map */

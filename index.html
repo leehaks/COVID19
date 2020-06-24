@@ -79,15 +79,17 @@
                     <img src="img/map.png" alt="map" /> 
                 </div>
 
-                <!-- 노드리스트 -->
+                <!-- 검색 및 검색리스트 -->
                 <div class="dialog-component" role="nodeList">
                     <div class="head">
-                        <h3 class="tit">검색설정</h3>
+                        <div class="tit">
+                            <h3>검색설정</h3>
+                        </div>
                     </div>
                     <div class="body">
 
                         <div id="mapDetailInfo">
-                            <form>
+                            <form class="p-10">
                                 <div>
                                     <label class="tit">장소</label>
                                     <input type="text" placeholder="위치를 입력해주세요.">
@@ -124,66 +126,212 @@
                                 </div>
                             </form>
 
-                            <span class="line-border mb-10"></span>
-
-                            <div class="store-board flex items-center">
-                                <div class="tit">
-                                    <h4>확진자 방문업체수</h4>
-                                    <p>업체는 2-3일내 방역작업 진행됩니다</p>
+                            <!-- 검색결과페이지 -->
+                            <div class="store-board ">
+                                <div class="flex items-center p-10">
+                                    <div class="tit">
+                                        <h4>확진자 방문업체수</h4>
+                                        <p>업체는 2-3일내 방역작업 진행됩니다</p>
+                                    </div>
+                                    <p class="ml-auto text-xl text-900">05</p>
                                 </div>
-                                <p class="ml-auto text-xl text-900">07</p>
+                                <div class="list-component border">
+                                    <ul>
+                                        <li>
+                                            <button class=""> 
+                                                <span class="align-num">1</span>
+                                                <span class="flex col items-start">
+                                                    <span class="arrive-spot">GS편의점</span>
+                                                    <span class="arrive-time">약 14:00 ~ 14:20</span>
+                                                </span>
+                                                <span class="ml-auto">#18833</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class=""> 
+                                                <span class="align-num">2</span>
+                                                <span class="flex col items-start">
+                                                    <span class="arrive-spot">세븐일레븐</span>
+                                                    <span class="arrive-time">약 16:30 ~ 16:40</span>
+                                                </span>
+                                                <span class="ml-auto">#18833</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class=""> 
+                                                <span class="align-num">3</span>
+                                                <span class="flex col items-start">
+                                                    <span class="arrive-spot">신한은행</span>
+                                                    <span class="arrive-time">약 14:40 ~ 15:10</span>
+                                                </span>
+                                                <span class="ml-auto">#18833</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class=""> 
+                                                <span class="align-num">4</span>
+                                                <span class="flex col items-start">
+                                                    <span class="arrive-spot">GS편의점</span>
+                                                    <span class="arrive-time">약 15:00 ~ 15:20</span>
+                                                </span>
+                                                <span class="ml-auto">#18833</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class=""> 
+                                                <span class="align-num">5</span>
+                                                <span class="flex col items-start">
+                                                    <span>이니스프리</span>
+                                                    <span class="arrive-time">약 14:30 ~ 14:50</span>
+                                                </span>
+                                                <span class="ml-auto">#18833</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-
-                            <span class="line-border"></span>
-
-                            <div class="list-component border">
-                                <ul>
-                                    <li><button class=""> GS편의점<span class="people-num">#18833</span></button></li>
-                                    <li><button class=""> 맥도날드<span class="people-num">#18827</span></button></li>
-                                    <li><button class=""> 짬뽕만리<span class="people-num">#18824</span></button></li>
-                                    <li><button class=""> 부대찌개<span class="people-num">#18817</span></button></li>
-                                    <li><button class=""> 세븐일레븐<span class="people-num">#18834</span></button></li>
-                                    <li><button class=""> 세븐일레븐<span class="people-num">#18816</span></button></li>
-                                    <li><button class=""> 신한은행<span class="people-num">#18802</span></button></li>
-                                </ul>
-                            </div>
-
                         </div>
-                        <div id="" class="route-component"></div>
                     </div>
                 </div>
 
                 <!-- 금일확진자리스트 -->
-                <div class="dialog-component" role="todayCoronaBoard">
+                <div class="dialog-component " role="todayCoronaBoard">
                     <div class="head">
-                        <h3 class="tit">전국 금일확진자 목록</h3>
+                        <div class="tit">
+                            <h3>전국 금일확진자 목록</h3>
+                        </div>                        
                     </div>
                     <div class="body">
                         <div class="today-status-board">
-                            <div class="flex items-center">
+                            <div class="flex items-center p-10">
                                 <div class="tit">
                                     <h4>금일확진자</h4>
                                     <p>업데이트일자 : 20200623</p>
                                 </div>
                                 <p class="ml-auto text-xl text-900">67</p>
                             </div>
-                            <div class="list-component border mt-10">
-                                <ul class="border">
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
-                                    <li><button>#11851<span>용산구</span></button></li>
+                            <div class="list-component border">
+                                <ul>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
                                 </ul>
                             </div>
+                        </div>                        
+                    </div>
+                </div>
 
+                <!-- 확진자경로리스트 -->
+                <div class="dialog-component hidden" role="todayCoronaBoard">
+                    <div class="head">                        
+                        <div class="tit flex items-center">
+                            <button class="back-arrow"></button>
+                            <h3>확진자경로</h3>
                         </div>
-
+                    </div>
+                    <div class="body p-10">
+                        <div class="confirmed-route">
+                            <div class="tit flex items-center">
+                                <h4 class="text-900 text-primary text-lg">#11833</h4>
+                                <button class="ml-auto btn link">서울의료원</button>
+                            </div>
+                                
+                            <div class="detail-route">
+                                <div>
+                                    <dl>
+                                        <dt>20.06.04</dt>
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>00:30</span>
+                                                    <button class="time-position">자택</button>
+                                                </div>
+                                                <button class="transport">
+                                                    <span class="bus">
+                                                        <i class="fas fa-bus"></i>
+                                                        <span class="transport-name">지선</span>
+                                                        <span class="transport-num">6623</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </dd>                                        
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>03:30</span>
+                                                    <button class="time-position">ABC클럽</button>
+                                                </div>
+                                                <button class="transport">
+                                                    <span class="walk">
+                                                        <i class="fas fa-walking"></i>
+                                                        <span class="transport-name">도보</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </dd> 
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>03:45</span>
+                                                    <button class="time-position">GS편의점 이태원점</button>
+                                                </div>
+                                                <button class="transport">
+                                                    <span class="walk">
+                                                        <i class="fas fa-walking"></i>
+                                                        <span class="transport-name">도보</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </dd> 
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>03:57</span>
+                                                    <button class="time-position">맥도날드 이태원점</button>
+                                                </div>
+                                                <button class="transport">
+                                                    <span class="bus">
+                                                        <i class="fas fa-bus"></i>
+                                                        <span class="transport-name">지선</span>
+                                                        <span class="transport-num">6673</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </dd> 
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>04:27</span>
+                                                    <button class="time-position">이태원로</button>
+                                                </div>
+                                                <button class="transport">
+                                                    <span class="bus">
+                                                        <i class="fas fa-bus"></i>
+                                                        <span class="transport-name">지선</span>
+                                                        <span class="transport-num">6618</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </dd> 
+                                        <dd>
+                                            <div class="position-detail">
+                                                <div class="flex items-center">
+                                                    <span>04:57</span>
+                                                    <button class="time-position">자택</button>
+                                                </div>
+                                                
+                                            </div>
+                                        </dd> 
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -191,22 +339,85 @@
                 <!-- 노드변화그래프 -->
                 <div class="dialog-component" role="nodeTimeChangeData">
                     <div class="head">
-                        <h3 class="tit">확진자 상황판</h3>                        
-                    </div>
-                    <div class="body">
-                        <div>
-                            <form>
-                                <select>
-                                    <option>서울시</option>
-                                </select>
-                            </form>
+                        <div class="tit">
+                            <h3>확진자 상황판</h3>                        
                         </div>
-                        <div id="mapTime" class="time-component"></div>
+                    </div>
+                    <div class="body flex">
+                        <div class="flex-1 p-10">
+                            <div class="flex items-center">
+                                <form>
+                                    <select>
+                                        <option>서울시</option>
+                                        <option>인천시</option>
+                                        <option>경기도</option>
+                                        <option>강원도</option>
+                                        <option>경상도</option>
+                                        <option>전라도</option>
+                                        <option>충청도</option>
+                                    </select>
+                                </form>
+                                <div class="area-confirmed-num ml-auto">
+                                    <ul class="flex items-center">
+                                        <li class="confirmed">
+                                            <div class="flex items-center">
+                                                <span class="node-color"></span>
+                                                <p class="confirmed-type">확진자<span class="total-num">846</span></p>
+                                                <span class="today-total-num">(+34)</span>
+                                            </div>
+                                        </li>
+                                        <li class="dead">
+                                            <div class="flex items-center">
+                                                <span class="node-color"></span>
+                                                <p class="confirmed-type">사망자<span class="total-num">28</span></p>
+                                                <span class="today-total-num">(+1)</span>
+                                            </div>
+                                        </li>
+                                        <li class="recovered">
+                                            <div class="flex items-center">
+                                                <span class="node-color"></span>
+                                                <p class="confirmed-type">완치자<span class="total-num">623</span></p>
+                                                <span class="today-total-num">(+39)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div id="mapTime" class="time-component"></div>
+                        </div>
+                        <div class="area-confirmed-today">
+                            <div class="list-component border">
+                                <ul>
+                                    <li><button>용산구<span class="ml-auto">6</span></button></li>
+                                    <li><button>종로구<span class="ml-auto">2</span></button></li>
+                                    <li><button>은평구<span class="ml-auto">3</span></button></li>
+                                    <li><button>동작구<span class="ml-auto">11</span></button></li>
+                                    <li><button>강남구<span class="ml-auto">1</span></button></li>
+                                    <li><button>강서구<span class="ml-auto">4</span></button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 팝업제거버튼 -->
+                <div class="dialog-component" role="expandMap">
+                    <button class="btn icon" title="팝업제거"><i class="fas fa-expand"></i></button>
+                </div> 
+
+                <!-- 현재위치설정버튼 -->
+                <div class="dialog-component" role="currentLocation">
+                    <button class="btn icon" title="현위치확인"><i class="fas fa-crosshairs"></i></button>
+                </div> 
+
             </div>
 
         </main>
     </div>
+
+    <script>
+
+    </script>
 </body>
 </html>
