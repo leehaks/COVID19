@@ -1,22 +1,31 @@
 #header {
-  height: 65px;
+  height: 4.5rem;
   z-index: 20;
+}
+
+#header .logo {
+  width: 4.5rem;
+  overflow: hidden;
+}
+
+#header .logo img {
+  width: 2rem;
 }
 
 #container {
   width: 100%;
-  height: calc(100% - 65px);
+  height: calc(100% - 4.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 #container #navSnb {
-  width: 75px;
+  width: 4.5rem;
   height: 100%;
-  padding-top: 2rem;
-  -webkit-box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.35);
-          box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.35);
+  padding-top: 2em;
+  -webkit-box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
 
@@ -27,70 +36,84 @@
           flex: 1;
 }
 
-#container #main #mapTime {
-  height: 175px;
-  max-height: 175px;
-  position: relative;
-}
-
-div[role="nodeList"] {
-  width: 325px;
+div[role="mapSearch"] {
+  width: 20rem;
   left: 1.5rem;
   top: 1.5rem;
 }
 
-div[role="nodeCrumbList"] {
-  width: 400px;
-  right: 1.5rem;
-  top: 1.5rem;
-}
-
 div[role="nodeTimeChangeData"] {
-  width: 750px;
+  width: 47.5rem;
   right: 1.5rem;
   bottom: 1.5rem;
 }
 
 div[role="todayCoronaBoard"] {
-  width: 275px;
+  width: 20rem;
   top: 1.5rem;
   right: 1.5rem;
 }
 
-div[role="expandMap"] {
-  left: 1.5rem;
-  bottom: 1.5rem;
+div[role="mapControlButton"] {
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  left: 23rem;
+  top: 1.5rem;
+  overflow: visible;
+}
+
+div[role="mapControlButton"] div[class*="button"] {
+  background: #fff;
   border: 1px solid #aaa;
+  margin-left: 1rem;
+  -webkit-box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
+  border-radius: .325rem;
 }
 
-div[role="expandMap"] button:hover {
-  background: #2756ff;
-  color: #fff;
+div[role="mapControlButton"] div[class*="button"]:first-child {
+  margin-left: 0;
 }
 
-div[role="expandMap"] button i {
-  font-size: 18px;
+div[role="mapControlButton"] div[class*="button"] .btn:hover.walk {
+  background: #5A5755;
 }
 
-div[role="currentLocation"] {
-  left: 5rem;
-  bottom: 1.5rem;
-  border: 1px solid #aaa;
+div[role="mapControlButton"] div[class*="button"] .btn:hover.taxi {
+  background: #F28400;
 }
 
-div[role="currentLocation"] button:hover {
-  background: #2756ff;
-  color: #fff;
+div[role="mapControlButton"] div[class*="button"] .btn:hover.bus {
+  background: #00CE13;
 }
 
-div[role="currentLocation"] button i {
-  font-size: 18px;
+div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
+  background: #720505;
+}
+
+.confirmed-time-graph {
+  height: 12.5rem;
+  max-height: 12.5rem;
+  position: relative;
 }
 
 .today-status-board .tit p {
   margin-top: .5rem;
   font-size: .75rem;
   color: #aaa;
+}
+
+.today-status-board .day-confirmed-radio {
+  border-bottom: 1px solid #ddd;
+  padding: 1em .5em;
+}
+
+.today-status-board .day-confirmed-radio label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .today-status-board .list-component {
@@ -115,6 +138,10 @@ div[role="currentLocation"] button i {
   overflow-y: auto;
 }
 
+.confirmed-route .tit {
+  border-bottom: 1px solid #ddd;
+}
+
 .confirmed-route .tit button {
   color: #aaa;
 }
@@ -124,7 +151,7 @@ div[role="currentLocation"] button i {
 }
 
 .confirmed-route .detail-route {
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem;
   max-height: 375px;
   overflow-y: auto;
 }
@@ -133,6 +160,10 @@ div[role="currentLocation"] button i {
   padding-left: 2rem;
   margin: 1.5rem 0;
   font-weight: 700;
+}
+
+.confirmed-route .detail-route dt:first-child {
+  margin-top: 0;
 }
 
 .confirmed-route .detail-route dd {
@@ -222,8 +253,8 @@ div[role="currentLocation"] button i {
 
 .area-confirmed-num li .node-color {
   background: #fff;
-  width: 13px;
-  height: 13px;
+  width: 1rem;
+  height: 1rem;
   display: inline-block;
   margin-right: .5rem;
   border: 3px solid #ddd;
@@ -239,8 +270,8 @@ div[role="currentLocation"] button i {
 }
 
 .area-confirmed-today {
-  height: 225px;
-  min-width: 130px;
+  height: 16rem;
+  min-width: 9rem;
   margin-left: 1rem;
   border-left: 1px solid #ddd;
   overflow-y: auto;
@@ -254,3 +285,36 @@ div[role="currentLocation"] button i {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.ui-datepicker {
+  margin-top: 1rem;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  background: #fff;
+  border-color: transparent;
+}
+
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.ui-datepicker .ui-datepicker-calendar td a.ui-state-default {
+  background: #fff;
+  border-color: transparent;
+}
+/*# sourceMappingURL=page.css.map */

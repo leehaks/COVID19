@@ -1,19 +1,10 @@
-.logo {
-  width: 75px;
-  overflow: hidden;
-}
-
-.logo img {
-  width: 35px;
-}
-
 .menu {
   padding: 0 2em;
 }
 
 .menu ul li {
   margin-left: 2rem;
-  line-height: 65px;
+  line-height: 4.5rem;
 }
 
 .menu ul li:first-child {
@@ -67,7 +58,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: .75em 1em;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .list-component ul li button:hover, .list-component ul li a:hover {
@@ -112,23 +103,50 @@ form > div:last-child {
   margin-bottom: 0;
 }
 
-form label.tit {
+form > div label.tit {
   display: inline-block;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
-form input {
-  width: 100%;
+form > div input[type="text"] {
   padding: .5em;
   border-bottom: 1px solid #ddd;
+}
+
+form.flex > div {
+  margin-bottom: 0;
+}
+
+form.flex .rdo-box ~ .rdo-box {
+  margin-left: 1rem;
+}
+
+form.flex .rdo-box:first-child {
+  margin-left: 0;
+}
+
+form.flex .rdo-box input {
+  margin-left: .5rem;
+}
+
+form.flex .chk-box ~ .chk-box {
+  margin-left: 1rem;
+}
+
+form.flex .chk-box:first-child {
+  margin-left: 0;
+}
+
+form.flex .chk-box input {
+  margin-left: .5rem;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 24px;
+  width: 35px;
+  height: 18px;
 }
 
 .switch input {
@@ -164,13 +182,13 @@ form input {
   border-radius: 24px;
 }
 
-.switch .slider:before {
+.switch .slider::before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -180,8 +198,8 @@ form input {
 .dialog-component {
   background: #fff;
   position: absolute;
-  -webkit-box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
   border: 1px solid #aaa;
   border-radius: .325rem;
   overflow: hidden;
@@ -204,6 +222,68 @@ form input {
   font-size: .875rem;
 }
 
+.loader-component {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader-component .loader {
+  border: 8px solid #f3f3f3;
+  /* Light grey */
+  border-top: 8px solid #2756ff;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1.25s linear infinite;
+          animation: spin 1.25s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.btn-group.no-blank button.btn {
+  border-left: 1px solid #ddd;
+  border-radius: 0;
+  margin-left: 0;
+}
+
+.btn-group.no-blank button.btn:first-child {
+  border-left: 0;
+}
+
 .btn-group button.btn {
   margin-left: .5rem;
 }
@@ -214,6 +294,7 @@ form input {
 
 .btn {
   background: transparent;
+  position: relative;
   width: auto;
   display: inline-block;
   padding: .5em 1em;
@@ -230,15 +311,6 @@ form input {
   cursor: pointer;
 }
 
-.btn.ellipse {
-  border-radius: 1.5rem;
-}
-
-.btn.ellipse:hover {
-  background: #2756ff;
-  color: #fff;
-}
-
 .btn.link {
   padding: 0;
 }
@@ -253,12 +325,66 @@ form input {
   padding: 0;
 }
 
-.btn i {
-  font-size: 14px;
+.btn.icon i {
+  font-size: 1.05rem;
+}
+
+.btn.border {
+  border-color: #2756ff;
+  color: #2756ff;
 }
 
 .btn span {
   margin-left: .5rem;
+}
+
+.btn.col {
+  width: 3.25rem;
+  height: 3.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 2px;
+}
+
+.btn.col span {
+  margin-top: .25rem;
+  margin-left: 0;
+  font-size: .85rem;
+  padding-top: 1px;
+}
+
+.btn.active {
+  background: #2756ff;
+  color: #fff;
+}
+
+.btn::after {
+  content: "";
+  height: 14rem;
+  left: -125px;
+  opacity: .2;
+  position: absolute;
+  top: -50px;
+  background: white;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 10;
+}
+
+.btn:hover:not(.link) {
+  background: #2756ff;
+  color: #fff;
+}
+
+.btn:hover:not(.link):after {
+  left: 120%;
 }
 
 .back-arrow {
@@ -273,3 +399,4 @@ form input {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+/*# sourceMappingURL=component.css.map */

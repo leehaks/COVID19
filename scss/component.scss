@@ -1,14 +1,6 @@
 $primary : #2756ff; 
 $basicBorder : 1px solid #ddd;
 
-
-.logo { 
-    width: 75px; 
-    overflow: hidden; 
-    img { width: 35px; }
-}
-
-
 .menu { 
     padding: 0 2em; 
 
@@ -16,7 +8,7 @@ $basicBorder : 1px solid #ddd;
 
         li { 
             margin-left: 2rem; 
-            line-height: 65px;
+            line-height: 4.5rem;
 
             &:first-child { margin-left: 0; }
 
@@ -66,7 +58,7 @@ $basicBorder : 1px solid #ddd;
                 display: flex; 
                 align-items: center;
                 padding: .75em 1em; 
-                font-size: 16px; 
+                font-size: 1rem; 
 
                 &:hover { background: #f1f1f1; }
 
@@ -99,25 +91,41 @@ $basicBorder : 1px solid #ddd;
 }
 
 
-form { 
-
+form {     
     & > div { 
         margin-bottom: 1rem; 
         &:last-child { margin-bottom: 0; }
-    }
 
-    label { 
-        &.tit { 
-            display: inline-block; 
-            margin-bottom: 1rem; 
-            font-weight: 700; 
+        label { 
+            &.tit { 
+                display: inline-block; 
+                margin-bottom: 1rem; 
+                font-weight: 700; 
+            }
+        }
+
+        input[type="text"] { 
+            padding: .5em; 
+            border-bottom: $basicBorder;
         }
     }
 
-    input { 
-        width: 100%; 
-        padding: .5em; 
-        border-bottom: $basicBorder; 
+    &.flex { 
+        & > div { margin-bottom: 0; }
+
+        .rdo-box {
+            &~.rdo-box { margin-left: 1rem; }
+            &:first-child { margin-left: 0 }
+
+            input { margin-left: .5rem; }
+        }
+    
+        .chk-box { 
+            &~.chk-box { margin-left: 1rem; }
+            &:first-child { margin-left: 0 }
+
+            input { margin-left: .5rem; }
+        }
     }
 }
 
@@ -125,8 +133,8 @@ form {
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 24px;
+    width: 35px;
+    height: 18px;
 
     input {
         opacity: 0;
@@ -160,13 +168,13 @@ form {
         transition: .4s;
         border-radius: 24px;
 
-        &:before {
+        &::before {
             position: absolute;
             content: "";
-            height: 16px;
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
+            height: 12px;
+            width: 12px;
+            left: 3px;
+            bottom: 3px;
             background-color: white;
             -webkit-transition: .4s;
             transition: .4s;
@@ -179,7 +187,7 @@ form {
 .dialog-component { 
     background: #fff; 
     position: absolute; 
-    box-shadow: 0 0 10px -2px rgba(0,0,0,.25); 
+    box-shadow: 0 0 4px -1px rgba(0,0,0,.25); 
     border: 1px solid #aaa; 
     border-radius: .325rem;
     overflow: hidden; 
@@ -196,15 +204,54 @@ form {
     }
 }
 
+.loader-component { 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background: rgba(0,0,0,.25); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+        border: 8px solid #f3f3f3; /* Light grey */
+        border-top: 8px solid #2756ff; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 1.25s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
 .btn-group { 
+    &.no-blank { 
+        button.btn { 
+            border-left: 1px solid #ddd; 
+            border-radius: 0;
+            margin-left: 0; 
+            &:first-child { border-left: 0; }
+        }
+    }
+
     button.btn { 
         margin-left: .5rem; 
         &:first-child { margin-left: 0; }
     }
+
 }
 
 .btn { 
     background: transparent; 
+    position: relative;
     width: auto; 
     display: inline-block;  
     padding: .5em 1em; 
@@ -220,14 +267,6 @@ form {
     font-size: inherit; 
     cursor: pointer;
 
-    &.ellipse { 
-        border-radius: 1.5rem;
-        &:hover { 
-            background: $primary; 
-            color: #fff; 
-        }
-    }
-
     &.link { 
         padding: 0; 
         &:hover { 
@@ -239,10 +278,56 @@ form {
         width: 36px; 
         height: 36px; 
         padding: 0; 
+        i { font-size: 1.05rem; }
     }
 
-    i { font-size: 14px; }
+    &.border { 
+        border-color: $primary;
+        color: $primary; 
+    }
+
     span { margin-left: .5rem; }
+
+    &.col { 
+        width: 3.25rem; 
+        height: 3.25rem; 
+        align-items: center;        
+        justify-content: center;
+        padding-top: 2px; 
+        span { 
+            margin-top: .25rem; 
+            margin-left: 0; 
+            font-size: .85rem; 
+            padding-top: 1px;
+        } 
+    }
+
+    &.active { 
+        background: $primary; 
+        color: #fff; 
+    }
+
+    &::after {
+        content: "";
+        height: 14rem;
+        left: -125px;
+        opacity: .2;
+        position: absolute;
+        top: -50px;
+        background:white;
+        -webkit-transform: rotate(35deg);
+        transform: rotate(35deg);
+        -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        width: 50px;
+        z-index: 10;
+    }
+
+    &:hover:not(.link){
+        background: #2756ff; 
+        color: #fff; 
+        &:after { left: 120%; }
+    }
 }
 
 .back-arrow { 

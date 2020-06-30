@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/import.css"> 
     <title>COVID-19</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./jquery-ui-1.12.1/datepicker-ko.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -80,7 +84,7 @@
                 </div>
 
                 <!-- 검색 및 검색리스트 -->
-                <div class="dialog-component" role="nodeList">
+                <div class="dialog-component" role="mapSearch">
                     <div class="head">
                         <div class="tit">
                             <h3>검색설정</h3>
@@ -92,36 +96,20 @@
                             <form class="p-10">
                                 <div>
                                     <label class="tit">장소</label>
-                                    <input type="text" placeholder="위치를 입력해주세요.">
+                                    <input class="w-full" type="text" placeholder="위치를 입력해주세요.">
                                 </div>
                                 <div class="flex justify-end">
                                     <button class="btn link text-primary">현재위치로 설정</button>
                                 </div>
                                 <div>
-                                    <label class="tit">이동수단</label>
-                                    <div class="btn-group flex">
-                                        <button class="btn ellipse flex items-center flex-1"><i class="fas fa-walking"></i><span class="text-sm">도보</span></button>
-                                        <button class="btn ellipse flex items-center flex-1"><i class="fas fa-taxi"></i><span class="text-sm">택시</span></button>
-                                        <button class="btn ellipse flex items-center flex-1"><i class="fas fa-bus"></i><span class="text-sm">버스</span></button>
-                                        <button class="btn ellipse flex items-center flex-1"><i class="fas fa-subway"></i><span class="text-sm">전철</span></button>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-end">
-                                    <span class="mr-5">이동경로제거</span>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div>
                                     <label class="tit">시간</label>
                                     <div class="flex items-center">
-                                        <input type="text" placeholder="FROM">
-                                        <input type="text" placeholder="TO" class="ml-10">
+                                        <input id="dateFrom" class="w-full" type="text" placeholder="FROM">
+                                        <input id="dateTo" class="w-full ml-10" type="text" placeholder="TO">
                                     </div>
                                 </div>
                                 <div class="btn-group flex justify-end">
-                                    <button class="btn icon primary"><i class="fas fa-undo"></i></button>
+                                    <button class="btn icon border"><i class="fas fa-undo"></i></button>
                                     <button class="btn primary"><i class="fas fa-search"></i><span>검색</span></button>
                                 </div>
                             </form>
@@ -195,14 +183,31 @@
                 </div>
 
                 <!-- 금일확진자리스트 -->
-                <div class="dialog-component " role="todayCoronaBoard">
+                <div class="dialog-component" role="todayCoronaBoard">
                     <div class="head">
                         <div class="tit">
-                            <h3>전국 금일확진자 목록</h3>
+                            <h3>전국 확진자 목록</h3>
                         </div>                        
                     </div>
                     <div class="body">
                         <div class="today-status-board">
+                            <div class="day-confirmed-radio">
+                                <form class="flex items-center justify-end">
+                                    <div class="rdo-box">
+                                        <label>금일확진자<input type="radio" name="confirmed" checked></label>
+                                    </div>
+                                    <div class="rdo-box">
+                                        <label class="">전체확진자<input type="radio" name="confirmed"></label>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- 
+                                전체확진자 선택시 텍스트 및 넘버값 변경
+                                금일확진자 >>> 전체확진자 변경
+                                금일확진자수 >>> 전체확진자수 변경
+                             -->
+
                             <div class="flex items-center p-10">
                                 <div class="tit">
                                     <h4>금일확진자</h4>
@@ -210,6 +215,7 @@
                                 </div>
                                 <p class="ml-auto text-xl text-900">67</p>
                             </div>
+
                             <div class="list-component border">
                                 <ul>
                                     <li><button>#11851<span class="ml-auto">용산구</span></button></li>
@@ -236,14 +242,14 @@
                             <h3>확진자경로</h3>
                         </div>
                     </div>
-                    <div class="body p-10">
+                    <div class="body">
                         <div class="confirmed-route">
-                            <div class="tit flex items-center">
+                            <div class="tit flex items-center p-10">
                                 <h4 class="text-900 text-primary text-lg">#11833</h4>
                                 <button class="ml-auto btn link">서울의료원</button>
                             </div>
                                 
-                            <div class="detail-route">
+                            <div class="detail-route p-10">
                                 <div>
                                     <dl>
                                         <dt>20.06.04</dt>
@@ -384,7 +390,7 @@
                                 </div>
                             </div>
     
-                            <div id="mapTime" class="time-component"></div>
+                            <div class="confirmed-time-graph" class="time-component"></div>
                         </div>
                         <div class="area-confirmed-today">
                             <div class="list-component border">
@@ -401,23 +407,51 @@
                     </div>
                 </div>
 
-                <!-- 팝업제거버튼 -->
-                <div class="dialog-component" role="expandMap">
-                    <button class="btn icon" title="팝업제거"><i class="fas fa-expand"></i></button>
+                <!-- 맵 컨트롤 버튼 -->
+                <div class="dialog-component" role="mapControlButton">
+                    <div class="flex items-start">                        
+                        <div class="current-location-button">
+                            <div class="btn-group no-blank flex">
+                                <button class="btn icon flex col" title="전체화면"><i class="fas fa-expand"></i><span>큰화면</span></button>
+                                <button class="btn icon flex col" title="현위치확인"><i class="fas fa-crosshairs"></i><span>현위치</span></button>
+                            </div>
+                        </div>
+                        <div class="transport-view-button">
+                            <div class="btn-group no-blank flex">
+                                <button class="btn icon flex col walk"><i class="fas fa-walking"></i><span>도보</span></button>
+                                <button class="btn icon flex col car"><i class="fas fa-car"></i><span>자차</span></button>
+                                <button class="btn icon flex col taxi"><i class="fas fa-taxi"></i><span>택시</span></button>
+                                <button class="btn icon flex col bus"><i class="fas fa-bus"></i><span>버스</span></button>
+                                <button class="btn icon flex col subway"><i class="fas fa-subway"></i><span>전철</span></button>
+                            </div>
+                        </div>
+                        <div class="transport-view-toggle-button">
+                            <div id="trafficRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="text-sm mr-5">전체</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div> 
-
-                <!-- 현재위치찾기버튼 -->
-                <div class="dialog-component" role="currentLocation">
-                    <button class="btn icon" title="현위치확인"><i class="fas fa-crosshairs"></i></button>
-                </div> 
-
             </div>
 
         </main>
+
+        <div class="loader-component hidden"><div class="loader"></div></div>
     </div>
 
-    <script>
-
+    <script type="text/javascript">
+        $(function(){
+            $("#dateFrom").datepicker({
+                dateFormat: "yy-mm-dd",
+                showMonthAfterYear: true,
+                dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+            }); 
+        })
     </script>
 </body>
 </html>
