@@ -224,6 +224,7 @@ div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 
 
 .confirmed-route .detail-route dd .position-detail {
   padding-left: 2rem;
+  position: relative;
 }
 
 .confirmed-route .detail-route dd .position-detail::before {

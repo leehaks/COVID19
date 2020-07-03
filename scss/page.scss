@@ -184,7 +184,8 @@ div[role="mapControlButton"] {
             }
 
             .position-detail { 
-                padding-left: 2rem;                                
+                padding-left: 2rem;   
+                position: relative;                             
 
                 &::before { 
                     content:''; 
