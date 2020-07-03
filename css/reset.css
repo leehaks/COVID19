@@ -17,7 +17,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	font-family: 'NanumSquare', sans-serif;
-	transform: skew(-0.008deg);
+	/* transform: skew(-0.008deg); */
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -31,6 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 html, body {
 	background: #fff;
+	min-width: 1280px; 
+	min-height: 720px; 
 	line-height: 1;
 	overflow: hidden;
 	

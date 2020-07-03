@@ -91,35 +91,34 @@
                         </div>
                     </div>
                     <div class="body">
-
                         <div id="mapDetailInfo">
                             <form class="p-10">
-                                <div>
-                                    <label class="tit">장소</label>
-                                    <input class="w-full" type="text" placeholder="위치를 입력해주세요.">
+                                <div class="pt-5">
+                                    <label class="tit"><i class="fas fa-map-marker-alt"></i>장소</label>
+                                    <input class="w-full" type="text" title="장소입력" placeholder="위치를 입력해주세요.">
                                 </div>
                                 <div class="flex justify-end">
-                                    <button class="btn link text-primary">현재위치로 설정</button>
+                                    <!-- <button class="btn link text-primary">현재위치로 설정</button> -->
                                 </div>
                                 <div>
-                                    <label class="tit">시간</label>
+                                    <label class="tit"><i class="far fa-calendar-alt"></i>시간</label>
                                     <div class="flex items-center">
-                                        <input id="dateFrom" class="w-full" type="text" placeholder="FROM">
-                                        <input id="dateTo" class="w-full ml-10" type="text" placeholder="TO">
+                                        <input class="w-full" type="text" id="fromDate" placeholder="FROM" autocomplete="off">
+                                        <input class="w-full ml-10" type="text" id="toDate" placeholder="TO" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="btn-group flex justify-end">
                                     <button class="btn icon border"><i class="fas fa-undo"></i></button>
-                                    <button class="btn primary"><i class="fas fa-search"></i><span>검색</span></button>
+                                    <button class="btn border"><i class="fas fa-search"></i><span>검색</span></button>
                                 </div>
                             </form>
 
                             <!-- 검색결과페이지 -->
-                            <div class="store-board ">
+                            <div class="store-board">
                                 <div class="flex items-center p-10">
                                     <div class="tit">
-                                        <h4>확진자 방문업체수</h4>
-                                        <p>업체는 2-3일내 방역작업 진행됩니다</p>
+                                        <h4>검색결과</h4>
+                                        <p>아래의 목록을 확인하세요.</p>
                                     </div>
                                     <p class="ml-auto text-xl text-900">05</p>
                                 </div>
@@ -182,8 +181,8 @@
                     </div>
                 </div>
 
-                <!-- 금일확진자리스트 -->
-                <div class="dialog-component" role="todayCoronaBoard">
+                <!-- 확진자리스트 -->
+                <div class="dialog-component hidden" role="todayCoronaBoard">
                     <div class="head">
                         <div class="tit">
                             <h3>전국 확진자 목록</h3>
@@ -216,37 +215,39 @@
                                 <p class="ml-auto text-xl text-900">67</p>
                             </div>
 
-                            <div class="list-component border">
-                                <ul>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                    <li><button>#11851<span class="ml-auto">용산구</span></button></li>
-                                </ul>
+                            <div class="confirmed-list">
+                                <div class="list-component border">
+                                    <ul>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                        <li><button>#11851<span class="ml-auto">용산구</span></button></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>                        
                     </div>
                 </div>
 
                 <!-- 확진자경로리스트 -->
-                <div class="dialog-component hidden" role="todayCoronaBoard">
+                <div class="dialog-component" role="todayCoronaBoard">
                     <div class="head">                        
-                        <div class="tit flex items-center">
-                            <button class="back-arrow"></button>
+                        <div class="tit flex items-center">                            
                             <h3>확진자경로</h3>
                         </div>
                     </div>
                     <div class="body">
                         <div class="confirmed-route">
                             <div class="tit flex items-center p-10">
+                                <button class="back-arrow mr-10"></button>
                                 <h4 class="text-900 text-primary text-lg">#11833</h4>
-                                <button class="ml-auto btn link">서울의료원</button>
+                                <button class="ml-auto btn link">용산구</button>
                             </div>
                                 
                             <div class="detail-route p-10">
@@ -390,7 +391,7 @@
                                 </div>
                             </div>
     
-                            <div class="confirmed-time-graph" class="time-component"></div>
+                            <div id='chartArea' class="confirmed-time-graph"></div>
                         </div>
                         <div class="area-confirmed-today">
                             <div class="list-component border">
@@ -412,28 +413,63 @@
                     <div class="flex items-start">                        
                         <div class="current-location-button">
                             <div class="btn-group no-blank flex">
-                                <button class="btn icon flex col" title="전체화면"><i class="fas fa-expand"></i><span>큰화면</span></button>
-                                <button class="btn icon flex col" title="현위치확인"><i class="fas fa-crosshairs"></i><span>현위치</span></button>
+                                <button class="btn flex items-center" title="전체화면"><i class="fas fa-expand"></i><span>전체화면</span></button>
+                                <!-- <button class="btn flex items-center" title="현위치확인"><i class="fas fa-crosshairs"></i><span>현위치</span></button> -->
                             </div>
                         </div>
-                        <div class="transport-view-button">
-                            <div class="btn-group no-blank flex">
-                                <button class="btn icon flex col walk"><i class="fas fa-walking"></i><span>도보</span></button>
-                                <button class="btn icon flex col car"><i class="fas fa-car"></i><span>자차</span></button>
-                                <button class="btn icon flex col taxi"><i class="fas fa-taxi"></i><span>택시</span></button>
-                                <button class="btn icon flex col bus"><i class="fas fa-bus"></i><span>버스</span></button>
-                                <button class="btn icon flex col subway"><i class="fas fa-subway"></i><span>전철</span></button>
-                            </div>
-                        </div>
-                        <div class="transport-view-toggle-button">
+                        <div class="transport-view-button flex">
+                            <!-- <div class="btn-group no-blank flex">
+                                <button class="active btn icon flex col walk"><i class="fas fa-walking"></i><span>도보</span></button>
+                                <button class="active btn icon flex col car"><i class="fas fa-car"></i><span>자차</span></button>
+                                <button class="active btn icon flex col taxi"><i class="fas fa-taxi"></i><span>택시</span></button>
+                                <button class="active btn icon flex col subway"><i class="fas fa-subway"></i><span>전철</span></button>
+                                <button class="active btn icon flex col bus"><i class="fas fa-bus"></i><span>버스</span></button>
+                            </div> -->
+
                             <div id="trafficRemoveToggle" class="flex items-center justify-center p-5">
-                                <span class="text-sm mr-5">전체</span>
+                                <span class="mr-5">전체</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div id="walkRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="mr-5"><i class="fas fa-walking"></i>도보</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div id="carRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="mr-5"><i class="fas fa-car-alt"></i>자차</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div id="taxiRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="mr-5"><i class="fas fa-taxi"></i>택시</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div id="subwayRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="mr-5"><i class="fas fa-subway"></i>전철</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div id="busRemoveToggle" class="flex items-center justify-center p-5">
+                                <span class="mr-5"><i class="fas fa-bus"></i>버스</span>
                                 <label class="switch">
                                     <input type="checkbox">
                                     <span class="slider"></span>
                                 </label>
                             </div>
                         </div>
+                        <!-- <div class="transport-view-toggle-button"></div> -->
                     </div>
                 </div> 
             </div>
@@ -445,11 +481,11 @@
 
     <script type="text/javascript">
         $(function(){
-            $("#dateFrom").datepicker({
+            $("#fromDate").datepicker({
                 dateFormat: "yy-mm-dd",
                 showMonthAfterYear: true,
                 dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+                monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
             }); 
         })
     </script>

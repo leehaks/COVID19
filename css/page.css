@@ -59,8 +59,8 @@ div[role="mapControlButton"] {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  left: 23rem;
   top: 1.5rem;
+  left: 27.5%;
   overflow: visible;
 }
 
@@ -71,26 +71,70 @@ div[role="mapControlButton"] div[class*="button"] {
   -webkit-box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
   border-radius: .325rem;
+  font-size: .85rem;
 }
 
 div[role="mapControlButton"] div[class*="button"]:first-child {
   margin-left: 0;
 }
 
-div[role="mapControlButton"] div[class*="button"] .btn:hover.walk {
-  background: #5A5755;
+div[role="mapControlButton"] div[class*="button"] .btn {
+  padding: .6082rem;
 }
 
-div[role="mapControlButton"] div[class*="button"] .btn:hover.taxi {
+div[role="mapControlButton"] .transport-view-button div[id*="walk"] .switch input:checked + .slider {
+  background: #5a5755;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="taxi"] .switch input:checked + .slider {
   background: #F28400;
 }
 
-div[role="mapControlButton"] div[class*="button"] .btn:hover.bus {
+div[role="mapControlButton"] .transport-view-button div[id*="bus"] .switch input:checked + .slider {
   background: #00CE13;
 }
 
-div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
+div[role="mapControlButton"] .transport-view-button div[id*="subway"] .switch input:checked + .slider {
   background: #720505;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="car"] .switch input:checked + .slider {
+  background: #000;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .85rem;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i {
+  margin-right: .35rem;
+  font-size: 1rem;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i.fa-car-alt {
+  font-size: 1.1rem;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i.fa-walking {
+  color: #5a5755;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i.fa-bus {
+  color: #00CE13;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i.fa-taxi {
+  color: #F28400;
+}
+
+div[role="mapControlButton"] .transport-view-button div[id*="Toggle"] span.mr-5 i.fa-subway {
+  color: #720505;
 }
 
 .confirmed-time-graph {
@@ -116,9 +160,9 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
   display: flex;
 }
 
-.today-status-board .list-component {
+.today-status-board .confirmed-list {
   border-top: 1px solid #ddd;
-  max-height: 250px;
+  max-height: 17.857rem;
   overflow-y: auto;
 }
 
@@ -134,7 +178,7 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
 
 .store-board .list-component {
   border-top: 1px solid #ddd;
-  max-height: 250px;
+  max-height: 17.857rem;
   overflow-y: auto;
 }
 
@@ -186,8 +230,8 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
   content: '';
   display: block;
   background: #fff;
-  width: 13px;
-  height: 13px;
+  width: .975rem;
+  height: .975rem;
   border: 3px solid #2756ff;
   border-radius: 50%;
   position: absolute;
@@ -200,8 +244,8 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
   content: '';
   display: block;
   position: absolute;
-  top: 13px;
-  left: 6px;
+  top: .975rem;
+  left: .465rem;
   width: 1px;
   height: 4.5rem;
   border-left: 1px dashed #2756ff;
@@ -216,6 +260,10 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
 }
 
 .confirmed-route .detail-route dd .position-detail .time-position {
+  max-width: 9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin-left: 1rem;
 }
 
@@ -286,16 +334,34 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
           align-items: center;
 }
 
-.ui-datepicker {
+div.ui-datepicker {
   margin-top: 1rem;
+  padding: .4em;
+  position: relative;
+  -webkit-box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px -1px rgba(0, 0, 0, 0.25);
 }
 
-.ui-datepicker .ui-datepicker-header {
+div.ui-datepicker::before {
+  position: absolute;
+  top: -6px;
+  left: 25px;
   background: #fff;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-top: 1px solid #c5c5c5;
+  border-left: 1px solid #c5c5c5;
+}
+
+div.ui-datepicker .ui-datepicker-header {
+  background: #fff;
+  padding: .6em 0;
   border-color: transparent;
 }
 
-.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+div.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,14 +373,77 @@ div[role="mapControlButton"] div[class*="button"] .btn:hover.subway {
           justify-content: center;
 }
 
-.ui-datepicker .ui-datepicker-header .ui-datepicker-title select {
+div.ui-datepicker .ui-datepicker-header .ui-datepicker-title select {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.ui-datepicker .ui-datepicker-calendar td a.ui-state-default {
+div.ui-datepicker .ui-datepicker-header a.ui-corner-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 6px;
+}
+
+div.ui-datepicker .ui-datepicker-header a.ui-corner-all span {
+  background-image: none;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #aaa;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+div.ui-datepicker .ui-datepicker-header a.ui-corner-all.ui-datepicker-next span {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+div.ui-datepicker .ui-datepicker-header a.ui-corner-all.ui-state-hover {
+  border: none;
+  background: transparent;
+}
+
+div.ui-datepicker .ui-datepicker-header a.ui-corner-all.ui-state-hover span {
+  border-color: #2756ff;
+}
+
+div.ui-datepicker .ui-datepicker-calendar {
+  margin: 0;
+}
+
+div.ui-datepicker .ui-datepicker-calendar td a.ui-state-default {
   background: #fff;
   border-color: transparent;
+  padding: 0;
+  text-align: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  line-height: 2.1rem;
+}
+
+div.ui-datepicker .ui-datepicker-calendar td a.ui-state-default:hover {
+  background: #e1e7ff;
+}
+
+div.ui-datepicker .ui-datepicker-calendar td a.ui-state-default.ui-state-active {
+  background: #2756ff;
+  color: #fff;
+}
+
+div.ui-datepicker .ui-datepicker-calendar td a.ui-state-default.ui-state-highlight:not(.ui-state-active) {
+  border-color: transparent;
+  font-weight: 700;
+  color: #2756ff;
 }
 /*# sourceMappingURL=page.css.map */

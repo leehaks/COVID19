@@ -102,6 +102,11 @@ form {
                 margin-bottom: 1rem; 
                 font-weight: 700; 
             }
+
+            i { 
+                margin-right: .75rem; 
+                color: #aaa; 
+            }
         }
 
         input[type="text"] { 
@@ -133,8 +138,8 @@ form {
 .switch {
     position: relative;
     display: inline-block;
-    width: 35px;
-    height: 18px;
+    width: 2.25rem;
+    height: 1.286rem;
 
     input {
         opacity: 0;
@@ -145,9 +150,9 @@ form {
             background-color: $primary;
 
             &:before {
-                -webkit-transform: translateX(16px);
-                -ms-transform: translateX(16px);
-                transform: translateX(16px);
+                -webkit-transform: translateX(1rem);
+                -ms-transform: translateX(1rem);
+                transform: translateX(1rem);
             }
         }
 
@@ -166,15 +171,15 @@ form {
         background-color: #ccc;
         -webkit-transition: .4s;
         transition: .4s;
-        border-radius: 24px;
+        border-radius: 2rem;
 
         &::before {
             position: absolute;
             content: "";
-            height: 12px;
-            width: 12px;
+            height: 0.857rem;
+            width: 0.857rem;
             left: 3px;
-            bottom: 3px;
+            bottom: 0.214rem;
             background-color: white;
             -webkit-transition: .4s;
             transition: .4s;
@@ -188,7 +193,7 @@ form {
     background: #fff; 
     position: absolute; 
     box-shadow: 0 0 4px -1px rgba(0,0,0,.25); 
-    border: 1px solid #aaa; 
+    border: 1px solid #ccc; 
     border-radius: .325rem;
     overflow: hidden; 
 
@@ -199,6 +204,7 @@ form {
         align-items: center; 
         padding: 1em; 
         color: #fff; 
+        display: none;
 
         .tit { h3 { font-size: .875rem; } }
     }
@@ -307,22 +313,6 @@ form {
         color: #fff; 
     }
 
-    &::after {
-        content: "";
-        height: 14rem;
-        left: -125px;
-        opacity: .2;
-        position: absolute;
-        top: -50px;
-        background:white;
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
-        -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-        width: 50px;
-        z-index: 10;
-    }
-
     &:hover:not(.link){
         background: #2756ff; 
         color: #fff; 
@@ -337,7 +327,7 @@ form {
     height: 8px; 
     margin-right: .75rem; 
     padding: 0; 
-    border-bottom: 2px solid #ddd; 
-    border-left: 2px solid #ddd; 
+    border-bottom: 2px solid $primary; 
+    border-left: 2px solid $primary; 
     transform: rotate(45deg);
 }
